@@ -1,0 +1,25 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Cielo -->
+  <rect width="400" height="400" fill="url(#sky)"/>
+  <!-- Pasto -->
+  <rect y="300" width="400" height="100" fill="#7CB342"/>
+  <!-- Tronco -->
+  <rect x="180" y="180" width="40" height="120" fill="#6D4C41" rx="5"/>
+  <!-- Copa del árbol -->
+  <circle cx="200" cy="150" r="70" fill="#388E3C"/>
+  <circle cx="160" cy="120" r="50" fill="#43A047"/>
+  <circle cx="240" cy="120" r="50" fill="#43A047"/>
+  <circle cx="200" cy="90" r="45" fill="#4CAF50"/>
+  <!-- Sol -->
+  <circle cx="320" cy="80" r="30" fill="#FDD835"/>
+  <!-- Nubes -->
+  <ellipse cx="100" cy="60" rx="30" ry="20" fill="white" opacity="0.8"/>
+  <ellipse cx="120" cy="60" rx="25" ry="18" fill="white" opacity="0.8"/>
+  <ellipse cx="80" cy="60" rx="20" ry="15" fill="white" opacity="0.8"/>
+</svg>

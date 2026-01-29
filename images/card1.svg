@@ -1,0 +1,13 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#grad2)" rx="10"/>
+  <circle cx="200" cy="120" r="50" fill="rgba(255,255,255,0.3)"/>
+  <rect x="150" y="100" width="100" height="40" fill="rgba(255,255,255,0.2)" rx="5"/>
+  <text x="200" y="200" font-family="Arial, sans-serif" font-size="28" fill="white" text-anchor="middle" font-weight="bold">Tarjeta 1</text>
+  <text x="200" y="240" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.9)" text-anchor="middle">Contenido destacado</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="space">
+      <stop offset="0%" style="stop-color:#1A237E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000051;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="earth">
+      <stop offset="0%" style="stop-color:#4FC3F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0288D1;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <!-- Espacio -->
+  <rect width="400" height="400" fill="url(#space)"/>
+  <!-- Estrellas -->
+  <circle cx="50" cy="50" r="2" fill="white"/>
+  <circle cx="100" cy="30" r="1.5" fill="white"/>
+  <circle cx="350" cy="80" r="2" fill="white"/>
+  <circle cx="80" cy="350" r="1" fill="white"/>
+  <circle cx="320" cy="300" r="2" fill="white"/>
+  <circle cx="150" cy="100" r="1.5" fill="white"/>
+  <circle cx="380" cy="200" r="1" fill="white"/>
+  <!-- Planeta Tierra -->
+  <circle cx="200" cy="200" r="120" fill="url(#earth)"/>
+  <!-- Continentes (América) -->
+  <path d="M 160,150 Q 165,170 160,190 L 155,210 Q 150,220 145,215 L 140,200 Q 138,185 142,175 Z" fill="#4CAF50"/>
+  <!-- Continentes (Europa/África) -->
+  <ellipse cx="220" cy="180" rx="25" ry="35" fill="#66BB6A"/>
+  <path d="M 235,200 Q 245,210 240,230 L 235,245 Q 230,250 225,245 L 220,230 Q 218,215 222,205 Z" fill="#4CAF50"/>
+  <!-- Nubes -->
+  <ellipse cx="180" cy="160" rx="15" ry="8" fill="white" opacity="0.6"/>
+  <ellipse cx="240" cy="220" rx="20" ry="10" fill="white" opacity="0.5"/>
+  <!-- Brillo -->
+  <circle cx="200" cy="200" r="120" fill="white" opacity="0.1"/>
+  <ellipse cx="170" cy="150" rx="40" ry="30" fill="white" opacity="0.2"/>
+  <!-- Texto -->
+  <text x="200" y="360" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="bold">Cuida el Planeta</text>
+</svg>

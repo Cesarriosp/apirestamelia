@@ -1,0 +1,30 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C8E6C9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Fondo -->
+  <rect width="400" height="400" fill="url(#bg3)"/>
+  <!-- Símbolo de reciclaje -->
+  <g transform="translate(200, 200)">
+    <!-- Flecha 1 (superior) -->
+    <path d="M -20,-80 L -40,-120 L 20,-100 L 0,-80 Z" fill="#4CAF50"/>
+    <path d="M -20,-80 L -30,-70 L -10,-70 Z" fill="#4CAF50"/>
+    
+    <!-- Flecha 2 (inferior derecha) -->
+    <path d="M 70,40 L 100,80 L 50,80 L 60,60 Z" fill="#4CAF50"/>
+    <path d="M 70,40 L 75,50 L 65,55 Z" fill="#4CAF50"/>
+    
+    <!-- Flecha 3 (inferior izquierda) -->
+    <path d="M -70,40 L -100,80 L -50,80 L -60,60 Z" fill="#4CAF50"/>
+    <path d="M -70,40 L -75,50 L -65,55 Z" fill="#4CAF50"/>
+    
+    <!-- Círculo central -->
+    <circle cx="0" cy="0" r="25" fill="transparent" stroke="#2E7D32" stroke-width="3"/>
+  </g>
+  <!-- Texto -->
+  <text x="200" y="340" font-family="Arial, sans-serif" font-size="32" fill="#2E7D32" text-anchor="middle" font-weight="bold">RECICLAR</text>
+  <text x="200" y="370" font-family="Arial, sans-serif" font-size="18" fill="#558B2F" text-anchor="middle">Reduce - Reutiliza - Recicla</text>
+</svg>
