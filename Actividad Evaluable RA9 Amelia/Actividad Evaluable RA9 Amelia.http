@@ -1,0 +1,6 @@
+@Actividad_Evaluable_RA9_Amelia_HostAddress = http://localhost:5190
+
+GET {{Actividad_Evaluable_RA9_Amelia_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

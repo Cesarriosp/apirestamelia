@@ -1,0 +1,136 @@
+@model IEnumerable<IndicadorDTO>
+
+@{
+    ViewData["Title"] = "Listado de Indicadores";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="display-4">
+            <i class="bi bi-graph-up"></i> Indicadores Ambientales
+        </h1>
+        <p class="lead">
+            Gestión de indicadores consumiendo el API REST de EcoData Solutions
+        </p>
+    </div>
+</div>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong><i class="bi bi-exclamation-triangle"></i> Modo de Prueba:</strong> 
+        El API REST no está disponible. Mostrando datos de ejemplo en memoria.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="bi bi-check-circle"></i> @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="row mb-3">
+    <div class="col-md-12">
+        <a asp-action="Create" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Crear Nuevo Indicador
+        </a>
+    </div>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">No hay indicadores disponibles</h4>
+        <p>No se encontraron indicadores en el sistema. Puedes crear uno nuevo usando el botón superior.</p>
+        <hr>
+        <p class="mb-0">
+            <strong>Nota:</strong> Esta aplicación consume datos del API REST sin acceso directo a la base de datos.
+        </p>
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Lista de Indicadores</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.First().Tipo)</th>
+                            <th>@Html.DisplayNameFor(model => model.First().Categoria)</th>
+                            <th>@Html.DisplayNameFor(model => model.First().Nombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.First().Valor)</th>
+                            <th>@Html.DisplayNameFor(model => model.First().Unidad)</th>
+                            <th>@Html.DisplayNameFor(model => model.First().Fecha)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span class="badge bg-secondary">@Html.DisplayFor(modelItem => item.Tipo)</span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-success">@Html.DisplayFor(modelItem => item.Categoria)</span>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                                <td>
+                                    <strong>@Html.DisplayFor(modelItem => item.Valor)</strong>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.Unidad)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Details" asp-route-id="@item.Id" 
+                                           class="btn btn-sm btn-info" title="Ver detalles">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" 
+                                           class="btn btn-sm btn-warning" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" 
+                                           class="btn btn-sm btn-danger" title="Eliminar">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            Total de indicadores: <strong>@Model.Count()</strong>
+        </div>
+    </div>
+}
+
+<div class="mt-4">
+    <div class="alert alert-light border" role="alert">
+        <h5 class="alert-heading">
+            <i class="bi bi-info-circle"></i> Información del Sistema
+        </h5>
+        <p>Esta aplicación MVC actúa como <strong>cliente del API REST</strong> de indicadores.</p>
+        <ul class="mb-0">
+            <li>No tiene acceso directo a la base de datos</li>
+            <li>Reutiliza completamente la lógica de negocio del backend</li>
+            <li>Todas las operaciones CRUD se realizan a través del API REST</li>
+            <li>URL del API: <code>https://localhost:7093/api/Indicadores</code></li>
+            <li><strong>Nota:</strong> Si el API no está disponible, se muestran datos de prueba en memoria</li>
+        </ul>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+}

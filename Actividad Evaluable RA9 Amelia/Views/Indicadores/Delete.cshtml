@@ -1,0 +1,107 @@
+@model IndicadorDTO
+
+@{
+    ViewData["Title"] = "Eliminar Indicador";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="display-5 text-danger">
+            <i class="bi bi-trash"></i> Eliminar Indicador
+        </h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-action="Index">Indicadores</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Eliminar</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">Confirmación de Eliminación</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger" role="alert">
+                    <h5 class="alert-heading">
+                        <i class="bi bi-exclamation-triangle-fill"></i> ¿Estás seguro de que deseas eliminar este indicador?
+                    </h5>
+                    <p>Esta acción no se puede deshacer. El indicador será eliminado permanentemente del sistema.</p>
+                </div>
+
+                <h5 class="mb-3">Datos del indicador a eliminar:</h5>
+
+                <dl class="row">
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Id)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Id)</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Tipo)</dt>
+                    <dd class="col-sm-8">
+                        <span class="badge bg-secondary">@Html.DisplayFor(model => model.Tipo)</span>
+                    </dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Ambito)</dt>
+                    <dd class="col-sm-8">
+                        <span class="badge bg-info">@Html.DisplayFor(model => model.Ambito)</span>
+                    </dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Categoria)</dt>
+                    <dd class="col-sm-8">
+                        <span class="badge bg-success">@Html.DisplayFor(model => model.Categoria)</span>
+                    </dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Nombre)</dt>
+                    <dd class="col-sm-8">
+                        <strong>@Html.DisplayFor(model => model.Nombre)</strong>
+                    </dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Descripcion)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Descripcion)</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Valor)</dt>
+                    <dd class="col-sm-8">
+                        <span class="badge bg-primary fs-6">@Html.DisplayFor(model => model.Valor)</span>
+                    </dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Unidad)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Unidad)</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Fecha)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Fecha)</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Fuente)</dt>
+                    <dd class="col-sm-8">
+                        @if (string.IsNullOrEmpty(Model.Fuente))
+                        {
+                            <em class="text-muted">No especificada</em>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(model => model.Fuente)
+                        }
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <a asp-action="Index" class="btn btn-secondary btn-lg">
+                            <i class="bi bi-x-circle"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-danger btn-lg">
+                            <i class="bi bi-trash-fill"></i> Confirmar Eliminación
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+}
